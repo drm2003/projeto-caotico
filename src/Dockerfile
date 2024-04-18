@@ -1,7 +1,11 @@
-FROM node:18.16.0
+FROM node:18.19-alpine
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
 EXPOSE 8080
 CMD ["node", "server.js"]
+
+
+# docker build -f Dockerfile -t danielucb/projeto-caotico:v4 .
+# docker run -dti --name projeto-caotico -p 8080:8080 danielucb/projeto-caotico:v4
