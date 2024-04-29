@@ -1,5 +1,8 @@
 FROM node:21-alpine
 WORKDIR /app
+
+RUN npm uninstall tar 
+
 COPY package*.json ./
 RUN npm install
 COPY . .
